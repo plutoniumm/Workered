@@ -14,7 +14,9 @@
   <div id="app"></div>
 
   <script>
-    const wpc = new WPClient( "worker.ts" );
+    const wpc = new WPClient( "worker.ts", ( event ) => {
+      console.log( "LOOGGG", event.data );
+    } );
     wpc.post( "wpc://fib", [ 10 ] );
   </script>
 </body>
