@@ -1,5 +1,7 @@
 ## Workered
 
+# DO NOT CONFUSE WITH [WORKERD](https://github.com/cloudflare/workerd) by CLOUDFLARE
+
 Call in the client with
 ```js
 import { Thread } from "workered";

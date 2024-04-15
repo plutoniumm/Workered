@@ -2,7 +2,7 @@
   "name": "workered",
   "version": "3.0.0",
   "description": "worker procedure call",
-  "main": "src/client.ts",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "bash build.sh",
