@@ -12,7 +12,7 @@ async function text () {
   return res.split("\n")[0];
 }
 
-import WPC from "./src/worker.ts";
-new WPC()
+import { Host } from "./src";
+new Host()
   .register("fib", fib)
   .register("text", text);

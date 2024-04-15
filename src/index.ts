@@ -1,2 +1,2 @@
-export { default as WServer } from './worker';
-export { default as WClient } from './client';
+export { default as Host } from './host';
+export { default as Thread } from './thread';

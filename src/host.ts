@@ -1,5 +1,4 @@
-// RPC for Workers
-class WPC {
+export default class WPC {
   init: boolean = false;
   funcs = [];
   constructor() {
@@ -31,6 +30,4 @@ class WPC {
 
     return this;
   }
-}
-
-export default WPC;
+};

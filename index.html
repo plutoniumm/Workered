@@ -13,9 +13,9 @@
   <div id="app"></div>
 
   <script type="module">
-    import { WClient } from "./src";
+    import { Thread } from "./src";
 
-    const w = new WClient( "worker.ts" );
+    const w = new Thread( "worker.ts" );
 
     w.run( "fib", [ 10 ] )
       .then( r => console.log( "RES", r ) )

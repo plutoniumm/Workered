@@ -1,4 +1,4 @@
-class WPC {
+export default class WPC {
   worker: Worker | null = null;
   constructor(worker: Worker | string) {
     if (typeof worker === "string") {
@@ -39,5 +39,3 @@ class WPC {
     });
   }
 };
-
-export default WPC;

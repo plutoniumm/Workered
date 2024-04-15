@@ -2,9 +2,9 @@
 
 Call it with
 ```js
-import {  } from "workered";
+import { Thread } from "workered";
 // CLIENT SIDE
-const w = new ?( "worker.ts" );
+const w = new Thread( "worker.ts" );
 
 // (<func>, param[])
 w.run( "fib", [ 10 ] ).then( res =>
@@ -14,12 +14,12 @@ w.run( "fib", [ 10 ] ).then( res =>
 
 And in the worker file
 ```js
-import {  } from "workered";
+import { Host } from "workered";
 // WORKER SIDE
 function fib (n: number): number {/*Calculate Fibonacci*/};
 async function todo (msg: string): Promise<string> {/*Do something*/};
 
-new WPC()
+new Host()
   .register("fib", fib)
   .register("todo", todo);
 ```
