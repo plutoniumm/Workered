@@ -1,31 +1,28 @@
-## WPC
-Worker Procedure Call
+## Workered
 
-### Usage
 Call it with
 ```js
+import {  } from "workered";
 // CLIENT SIDE
-const wpc = new WPClient( "worker.ts", (msgEvt)=>{
-  console.log("Some onmessage callback", msgEvt.data );
-} );
-// param = string | number | boolean;
-// (wpc://<func>, param[])
-wpc.post( "wpc://fib", [ 10 ] );
+const w = new ?( "worker.ts" );
+
+// (<func>, param[])
+w.run( "fib", [ 10 ] ).then( res =>
+  console.log("Fibonacci of 10 is", res)
+);
 ```
 
 And in the worker file
 ```js
+import {  } from "workered";
 // WORKER SIDE
 function fib (n: number): number {/*Calculate Fibonacci*/};
+async function todo (msg: string): Promise<string> {/*Do something*/};
 
-import WPC from "./src/worker.ts";
 new WPC()
   .register("fib", fib)
+  .register("todo", todo);
 ```
 
-If the msg post is not of form `wpc://<func>` it will be passed as a normal function as is and `params` will be ignored.
-
-###
-- Can this be insecure? Yes, i dont care.
-- Can this be slow? Yes, i dont care.
-- Is it fun? Yes, i care.
+### Notes
+- Params must be `string | number | boolean`

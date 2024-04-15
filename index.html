@@ -6,18 +6,24 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + TS</title>
-  <script src="./src/client.ts"></script>
 </head>
 
 <body>
   <div>Buenodeno</div>
   <div id="app"></div>
 
-  <script>
-    const wpc = new WPClient( "worker.ts", ( event ) => {
-      console.log( "LOOGGG", event.data );
-    } );
-    wpc.post( "wpc://fib", [ 10 ] );
+  <script type="module">
+    import { WClient } from "./src";
+
+    const w = new WClient( "worker.ts" );
+
+    w.run( "fib", [ 10 ] )
+      .then( r => console.log( "RES", r ) )
+      .catch( e => console.error( "ERR", e ) );
+
+    w.run( "text" )
+      .then( r => console.log( "RES", r ) )
+      .catch( e => console.error( "ERR", e ) );
   </script>
 </body>
 

@@ -1,11 +1,12 @@
 {
-  "name": "wpc",
+  "name": "workered",
   "version": "0.1.0",
   "description": "worker procedure call",
   "main": "src/client.ts",
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "bash build.sh"
+    "build": "bash build.sh",
+    "gh-pages": "npx gh-pages -d dist -t true -b dist"
   },
   "author": "plutoniumm",
   "license": "MIT"
